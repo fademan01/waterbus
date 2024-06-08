@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -23,10 +23,11 @@ void main(List<String> args) async {
     () async {
       final WidgetsBinding widgetsBinding =
           WidgetsFlutterBinding.ensureInitialized();
-      FlutterNativeSplash.preserve(
-        widgetsBinding: widgetsBinding,
-      );
-
+      if (!Platform.isLinux) {
+        FlutterNativeSplash.preserve(
+          widgetsBinding: widgetsBinding,
+        );
+      }
       PaintingBinding.instance.imageCache.maximumSizeBytes =
           1024 * 1024 * 300; // 300 MB
 

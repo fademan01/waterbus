@@ -34,6 +34,8 @@ class DefaultFirebaseOptions {
         return macos;
       case TargetPlatform.windows:
         return android;
+      case TargetPlatform.linux:
+        return linux;
       default:
         throw UnsupportedError(
           'DefaultFirebaseOptions are not supported for this platform.',
@@ -57,6 +59,13 @@ class DefaultFirebaseOptions {
     messagingSenderId: '727554668212',
     projectId: 'waterbus-71cf5',
     storageBucket: 'waterbus-71cf5.appspot.com',
+  );
+
+  static const FirebaseOptions linux = FirebaseOptions(
+    apiKey: 'AIzaSyCjkoKxglsO1aJEteZZaG1Gyg6GCCr7sy4',
+    appId: '1:458640275351:web:c3da746f18d73c009db6d2',
+    messagingSenderId: '458640275351',
+    projectId: 'fluttershare-8c396',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
